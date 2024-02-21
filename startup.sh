@@ -15,7 +15,7 @@ trap print_error ERR
 resolvectl query registry.iutbeziers.fr  >/dev/null 2>&1 || echo "erreur resolution dns" 
 
 BINDIR='/home/bin'
-REPOSOURCE='https://registry.iutbeziers.fr:11443/pouchou/startup.git'
+REPOSOURCE='https://github.com/pushou/startup.git'
 
 
 # On fait du git et c'est nécessaire
