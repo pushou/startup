@@ -30,7 +30,7 @@ cd $BINDIR
 git --git-dir=$BINDIR/.git --work-tree=$BINDIR pull $REPOSOURCE &>/dev/null  
 chmod +x $BINDIR/maj.sh
 # maj des containers en mode détaché
-chown root.root /root/.bashrc
+chown root:root /root/.bashrc
 echo -e "\nDeux utilisateurs sont créés:\n user root password root\n user student password student\n"
 echo -e "\nsudo est activé sans mot de passe\n"
 echo -e "\nListe des ip de la VM:\n"
