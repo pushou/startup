@@ -20,6 +20,7 @@ if is_centos; then
 	cp -f /home/bin/bashrc.centos /root/.bashrc
 else
 	cp -f /home/bin/bashrc /root/.bashrc
+	cp -f /home/bin/bash_profile /root/.bash_profile
         docker logout
         docker logout registry.iutbeziers.fr
 fi
