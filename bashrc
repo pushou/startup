@@ -29,5 +29,7 @@ fi
 [[ -v SSH_CONNECTION ]] && return
 [[ -v SUDO_UID ]] && return
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(navi widget bash)"
 
 /home/bin/startup.sh
