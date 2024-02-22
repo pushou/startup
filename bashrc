@@ -32,4 +32,5 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(navi widget bash)"
 
+export PATH="/root/.cargo/bin:/root/.fzf/bin:$PATH"
 /home/bin/startup.sh
