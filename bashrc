@@ -24,13 +24,13 @@ if [ -x "$(command -v fzf)"  ]
 then
 	    source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
+export PATH="/root/.cargo/bin:/root/.fzf/bin:$PATH"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(/root/.cargo/bin/navi widget bash)"
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 [[ -v SSH_CONNECTION ]] && return
 [[ -v SUDO_UID ]] && return
 
-export PATH="/root/.cargo/bin:/root/.fzf/bin:$PATH"
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-eval "$(/root/.cargo/bin/navi widget bash)"
 
 /home/bin/startup.sh
