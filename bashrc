@@ -29,8 +29,8 @@ fi
 [[ -v SSH_CONNECTION ]] && return
 [[ -v SUDO_UID ]] && return
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-eval "$(navi widget bash)"
-
 export PATH="/root/.cargo/bin:/root/.fzf/bin:$PATH"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(/root/.cargo/bin/navi widget bash)"
+
 /home/bin/startup.sh
