@@ -22,9 +22,13 @@ alias fzfbat="fzf --preview 'batcat --color=always --style=numbers --line-range=
 
 if [ -x "$(command -v fzf)"  ]
 then
+	if [ ! -d "/usr/share/doc/fzf/examples" ]; then
+            mkdir -p /usr/share/doc/fzf/examples
+            ln -s /root/.fzf/shell/key-bindings.bash  /usr/share/doc/fzf/examples/key-bindings.bash
 	    source /usr/share/doc/fzf/examples/key-bindings.bash
+        fi
 fi
-export PATH="/root/.cargo/bin:/root/.fzf/bin:$PATH"
+export PATH="~/.cargo/bin:~/.fzf/bin:~/.local/bin:$PATH"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(/root/.cargo/bin/navi widget bash)"
 # If not running interactively, don't do anything
