@@ -26,9 +26,12 @@ else
 fi
 cp -f /home/bin/profile /root/.profile
 MACHINE_TYPE=$(uname -m)
+echo -e "\nMaj des containers DEBIAN IUT\n"
 if [ ${MACHINE_TYPE} == 'x86_64' ];then
-   echo -e "\nMaj des containers DEBIAN IUT\n"
-   podman pull registry.iutbeziers.fr/iutimages/debianiut:latest
+   if is_rocky; then
+       podman pull registry.iutbeziers.fr/iutimages/debianiut:latest
+   else
+       docker pull registry.iutbeziers.fr/iutimages/debianiut:latest
    timedatectl set-local-rtc 1 --adjust-system-clock
 fi
 # disable du swap pour kubernetes
