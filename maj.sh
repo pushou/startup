@@ -1,6 +1,6 @@
 #! /bin/bash
 
-is_centos() {
+is_rocky() {
 [[ $(lsb_release -d) =~ "Rocky" ]]
 return $?
 }
@@ -16,7 +16,7 @@ return $?
 
 figlet "IUT BEZIERS"
 #cat /home/bin/dockerlogin | docker login --username iutbrt --password-stdin registry.iutbeziers.fr
-if is_centos; then
+if is_rocky; then
 	cp -f /home/bin/bashrc.centos /root/.bashrc
 else
 	cp -f /home/bin/bashrc /root/.bashrc
@@ -28,7 +28,7 @@ cp -f /home/bin/profile /root/.profile
 MACHINE_TYPE=$(uname -m)
 if [ ${MACHINE_TYPE} == 'x86_64' ];then
    echo -e "\nMaj des containers DEBIAN IUT\n"
-   if is_centos; then
+   if is_rocky; then
         podman pull registry.iutbeziers.fr/iutimages/debianiut:latest
    else
 	    docker pull registry.iutbeziers.fr/iutimages/debianiut:latest
