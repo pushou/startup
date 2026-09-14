@@ -29,15 +29,10 @@ MACHINE_TYPE=$(uname -m)
 if [ ${MACHINE_TYPE} == 'x86_64' ];then
    echo -e "\nMaj des containers DEBIAN IUT\n"
    if is_centos; then
-        podman pull registry.iutbeziers.fr/debianiut:latest
+        podman pull registry.iutbeziers.fr/iutimages/debianiut:latest
    else
-	docker pull registry.iutbeziers.fr/debianiut:latest
+	    docker pull registry.iutbeziers.fr/iutimages/debianiut:latest
    fi
-#  podman pull registry.iutbeziers.fr/debianiut:latest
-#   FICH=/usr/local/bin/docker-compose
-#   if [ ! -f $FICH ];then
-#       curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
-#   fi
    timedatectl set-local-rtc 1 --adjust-system-clock
    
 fi
