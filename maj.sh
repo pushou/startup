@@ -1,7 +1,7 @@
 #! /bin/bash
 
 is_centos() {
-[[ $(lsb_release -d) =~ "CentOS" ]]
+[[ $(lsb_release -d) =~ "Rocky" ]]
 return $?
 }
 is_debian() {
