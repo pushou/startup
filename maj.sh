@@ -32,6 +32,7 @@ if [ ${MACHINE_TYPE} == 'x86_64' ];then
        podman pull registry.iutbeziers.fr/iutimages/debianiut:latest
    else
        docker pull registry.iutbeziers.fr/iutimages/debianiut:latest
+   fi
    timedatectl set-local-rtc 1 --adjust-system-clock
 fi
 # disable du swap pour kubernetes
